@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import ModalProvider from "@/providers/ModalProvider";
 
-
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -13,7 +12,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "techbazer",
+  title: "Meta Minds",
   description: "your ultimate gadgets shop",
 };
 
