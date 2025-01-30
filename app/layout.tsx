@@ -12,7 +12,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Meta Minds",
+  title: "Echo Shop",
   description: "your ultimate gadgets shop",
 };
 
