@@ -31,7 +31,7 @@ const ProductForm = () => {
     brand: "",
     type: "featured",
     description: "",
-    aboutItem: '',
+    aboutItem: "",
     images: [],
     color: [],
     discount: undefined,
@@ -55,7 +55,7 @@ const ProductForm = () => {
       brand: "",
       type: "featured",
       description: "",
-      aboutItem: '',
+      aboutItem: "",
       images: [],
       color: [],
       discount: undefined,
@@ -67,7 +67,10 @@ const ProductForm = () => {
       <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
         Add New Product
       </h2>
-      <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-4"
+      >
         <div>
           <Label
             htmlFor="name"
@@ -165,16 +168,7 @@ const ProductForm = () => {
           >
             Product Type
           </Label>
-          <select
-            id="type"
-            className="mt-1 p-2 block w-full dark:bg-slate-950 rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
-            {...register("type")}
-          >
-            <option value="featured">Featured</option>
-            <option value="top-rated">Top Rated</option>
-            <option value="most-popular">Most Popular</option>
-            <option value="new-arrivals">New Arrivals</option>
-          </select>
+
           {errors.type && (
             <span className="text-red-500">{errors.type.message}</span>
           )}
@@ -196,7 +190,6 @@ const ProductForm = () => {
             <span className="text-red-500">{errors.description.message}</span>
           )}
         </div>
-
 
         <div>
           <Label
@@ -260,6 +253,5 @@ const ProductForm = () => {
     </div>
   );
 };
-
 
 export default ProductForm;

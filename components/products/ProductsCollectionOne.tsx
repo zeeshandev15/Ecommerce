@@ -26,17 +26,6 @@ const ProductsCollectionOne = () => {
           <h2 className="text-3xl md:text-5xl font-semibold border-l-4 border-l-rose-500 p-2">
             Featured Products
           </h2>
-          <TabsList className="font-semibold bg-transparent text-center">
-            <TabsTrigger value="top-rated" className="md:text-xl">
-              Top Rated
-            </TabsTrigger>
-            <TabsTrigger value="most-popular" className="md:text-xl">
-              Most Popular
-            </TabsTrigger>
-            <TabsTrigger value="new-items" className="md:text-xl">
-              New Items
-            </TabsTrigger>
-          </TabsList>
         </div>
         <TabsContent value="top-rated" className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
