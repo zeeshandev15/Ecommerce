@@ -1,5 +1,5 @@
-'use client'
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -19,21 +19,29 @@ const schema = z.object({
 });
 
 // Defined types for form data
-type FormData = z.infer<typeof schema>;
-
-const CheckoutForm: React.FC = () => {
-  // Initialize React Hook Form
+export type FormData = z.infer<typeof schema>;
+interface CheckoutFormProps {
+  setShippingform: React.Dispatch<React.SetStateAction<any>>;
+}
+const CheckoutForm: React.FC<CheckoutFormProps> = ({ setShippingform }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
   // Handle form submission
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
+    const currentDate = new Date().toISOString();
+    const finalData = {
+      ...data,
+      date: currentDate,
+    };
+    setShippingform(finalData);
+    reset();
   };
 
   return (
@@ -130,5 +138,4 @@ const CheckoutForm: React.FC = () => {
     </div>
   );
 };
-
 export default CheckoutForm;

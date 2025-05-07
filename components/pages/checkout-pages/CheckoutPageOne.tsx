@@ -1,10 +1,13 @@
+"use client";
 import OrderSummaryForCheckout from "@/components/carts/OrderSummaryForCheckout";
 import CheckoutForm from "@/components/forms/CheckoutForm";
 import CouponCodeForm from "@/components/forms/CouponCodeForm";
 import { Separator } from "@/components/ui/separator";
-import React from "react";
+import React, { useState } from "react";
 
 const CheckoutPageOne = () => {
+  const [shippingform, setShippingform] = useState<any>();
+
   return (
     <section className="px-4 py-4 lg:px-16  bg-white dark:bg-gray-800">
       <div className="max-w-screen-xl mx-auto">
@@ -22,12 +25,12 @@ const CheckoutPageOne = () => {
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 Shipping Address
               </h2>
-              <CheckoutForm />
+              <CheckoutForm setShippingform={setShippingform} />
             </div>
-              <CouponCodeForm />
+            <CouponCodeForm />
           </div>
           {/* Order Summary */}
-          <OrderSummaryForCheckout />
+          <OrderSummaryForCheckout shippingform={shippingform} />
         </div>
       </div>
     </section>
